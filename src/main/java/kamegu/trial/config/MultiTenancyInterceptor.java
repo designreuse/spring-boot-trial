@@ -12,6 +12,7 @@ public class MultiTenancyInterceptor extends HandlerInterceptorAdapter {
 
 	@Override
 	public boolean preHandle(HttpServletRequest req, HttpServletResponse res, Object handler) throws Exception {
+		@SuppressWarnings("unchecked")
 		Map<String, Object> pathVars = (Map<String, Object>) req.getAttribute(HandlerMapping.URI_TEMPLATE_VARIABLES_ATTRIBUTE);
 
 		if (pathVars.containsKey("tenantid")) {

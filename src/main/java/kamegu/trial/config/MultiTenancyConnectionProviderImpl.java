@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Map;
 
-import org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl;
+import org.hibernate.c3p0.internal.C3P0ConnectionProvider;
 import org.hibernate.engine.jdbc.connections.spi.MultiTenantConnectionProvider;
 import org.hibernate.service.spi.Configurable;
 import org.hibernate.service.spi.ServiceRegistryAwareService;
@@ -18,7 +18,7 @@ public class MultiTenancyConnectionProviderImpl implements MultiTenantConnection
 
 	private static final long serialVersionUID = 8168907057647334460L;
 
-	private DriverManagerConnectionProviderImpl provider = new DriverManagerConnectionProviderImpl();
+	private C3P0ConnectionProvider provider = new C3P0ConnectionProvider();
 
 
 	@Override
